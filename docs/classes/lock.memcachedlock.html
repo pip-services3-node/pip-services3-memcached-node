@@ -76,7 +76,7 @@
 					<h3 id="configuration-parameters">Configuration parameters</h3>
 					<ul>
 						<li>connection(s):<ul>
-								<li>discovery_key:         (optional) a key to retrieve the connection from <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html" class="external">IDiscovery</a></li>
+								<li>discovery_key:         (optional) a key to retrieve the connection from <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html" class="external">IDiscovery</a></li>
 								<li>host:                  host name or IP address</li>
 								<li>port:                  port number</li>
 								<li>uri:                   resource URI or connection string with all parameters in it</li>
@@ -100,7 +100,7 @@
 					</ul>
 					<h3 id="references">References</h3>
 					<ul>
-						<li><code>*:discovery:*:*:1.0</code>        (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html" class="external">IDiscovery</a> services to resolve connection</li>
+						<li><code>*:discovery:*:*:1.0</code>        (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html" class="external">IDiscovery</a> services to resolve connection</li>
 					</ul>
 					<h3 id="example">Example</h3>
 					<pre><code>let lock = <span class="hljs-keyword">new</span> MemcachedLock();
@@ -131,10 +131,15 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">Lock</span>
+						<a href="lock.memcachedlock.html" class="tsd-signature-type">MemcachedLock</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">MemcachedLock</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="lock.memcachedlock.html" class="tsd-signature-type">MemcachedLock</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -143,11 +148,9 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">ILock</span></li>
-					<li><span class="tsd-signature-type">IReconfigurable</span></li>
-					<li><span class="tsd-signature-type">IConfigurable</span></li>
-					<li><span class="tsd-signature-type">IReferenceable</span></li>
-					<li><span class="tsd-signature-type">IOpenable</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -157,14 +160,13 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="lock.memcachedlock.html#acquirelock" class="tsd-kind-icon">acquire<wbr>Lock</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#close" class="tsd-kind-icon">close</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="lock.memcachedlock.html#configure" class="tsd-kind-icon">configure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#configure" class="tsd-kind-icon">configure</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#isopen" class="tsd-kind-icon">is<wbr>Open</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#open" class="tsd-kind-icon">open</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="lock.memcachedlock.html#releaselock" class="tsd-kind-icon">release<wbr>Lock</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#releaselock" class="tsd-kind-icon">release<wbr>Lock</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#setreferences" class="tsd-kind-icon">set<wbr>References</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="lock.memcachedlock.html#tryacquirelock" class="tsd-kind-icon">try<wbr>Acquire<wbr>Lock</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="lock.memcachedlock.html#tryacquirelock" class="tsd-kind-icon">try<wbr>Acquire<wbr>Lock</a></li>
 							</ul>
 						</section>
 					</div>
@@ -172,83 +174,6 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="acquirelock" class="tsd-anchor"></a>
-					<h3>acquire<wbr>Lock</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">acquire<wbr>Lock<span class="tsd-signature-symbol">(</span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ttl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, timeout<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from Lock.acquireLock</p>
-								<ul>
-									<li>Defined in D:/Work/Project/Node.js/documentation/pip-services-memcached-node/node_modules/pip-services3-components-node/obj/src/lock/Lock.d.ts:54</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Acquiring a lock for a certain resource, identifiable by the lock&#39;s key.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>correlationId: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>unique business transaction id to trace calls across components.</p>
-									</div>
-								</li>
-								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the key to identify the lock by.</p>
-									</div>
-								</li>
-								<li>
-									<h5>ttl: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the lock&#39;s time-to-live.</p>
-									</div>
-								</li>
-								<li>
-									<h5>timeout: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the acquisition&#39;s retry interval.</p>
-									</div>
-								</li>
-								<li>
-									<h5>callback: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the function to call once the lock has been acquired. Will be called
-											with an error if one is raised. If the retry interval times out,
-											a <a href="https://rawgit.com/pip-services-node/pip-services3-commons-node/master/doc/api/classes/errors.conflictexception.html" class="external">ConflictException</a>
-										will be returned.</p>
-									</div>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>err: <span class="tsd-signature-type">any</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="close" class="tsd-anchor"></a>
 					<h3>close</h3>
@@ -259,7 +184,7 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L174">lock/MemcachedLock.ts:174</a></li>
+									<li>Defined in lock/MemcachedLock.ts:174</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -304,18 +229,17 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="configure" class="tsd-anchor"></a>
 					<h3>configure</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">configure<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConfigParams</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides Lock.configure</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L88">lock/MemcachedLock.ts:88</a></li>
+									<li>Defined in lock/MemcachedLock.ts:88</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -346,7 +270,7 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L120">lock/MemcachedLock.ts:120</a></li>
+									<li>Defined in lock/MemcachedLock.ts:120</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -369,7 +293,7 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L130">lock/MemcachedLock.ts:130</a></li>
+									<li>Defined in lock/MemcachedLock.ts:130</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -414,18 +338,17 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="releaselock" class="tsd-anchor"></a>
 					<h3>release<wbr>Lock</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">release<wbr>Lock<span class="tsd-signature-symbol">(</span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides Lock.releaseLock</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L217">lock/MemcachedLock.ts:217</a></li>
+									<li>Defined in lock/MemcachedLock.ts:217</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -486,7 +409,7 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L111">lock/MemcachedLock.ts:111</a></li>
+									<li>Defined in lock/MemcachedLock.ts:111</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -507,18 +430,17 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="tryacquirelock" class="tsd-anchor"></a>
 					<h3>try<wbr>Acquire<wbr>Lock</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">try<wbr>Acquire<wbr>Lock<span class="tsd-signature-symbol">(</span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, ttl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides Lock.tryAcquireLock</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-memcached-node/blob/7e830c9/src/lock/MemcachedLock.ts#L198">lock/MemcachedLock.ts:198</a></li>
+									<li>Defined in lock/MemcachedLock.ts:198</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -608,13 +530,10 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="lock.memcachedlock.html" class="tsd-kind-icon">Memcached<wbr>Lock</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="lock.memcachedlock.html#acquirelock" class="tsd-kind-icon">acquire<wbr>Lock</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="lock.memcachedlock.html#close" class="tsd-kind-icon">close</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="lock.memcachedlock.html#configure" class="tsd-kind-icon">configure</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -623,13 +542,13 @@ lock.acquire(<span class="hljs-string">"123"</span>, <span class="hljs-string">"
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="lock.memcachedlock.html#open" class="tsd-kind-icon">open</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="lock.memcachedlock.html#releaselock" class="tsd-kind-icon">release<wbr>Lock</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="lock.memcachedlock.html#setreferences" class="tsd-kind-icon">set<wbr>References</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="lock.memcachedlock.html#tryacquirelock" class="tsd-kind-icon">try<wbr>Acquire<wbr>Lock</a>
 							</li>
 						</ul>
