@@ -4,7 +4,7 @@ This module is a part of the [Pip.Services](http://pipservices.org) polyglot mic
 
 The Memcached module contains the following components: MemcachedLock and MemcachedCache for working with locks and cache on the Memcached server.
 
-This module contains the following packages:
+The module contains the following packages:
 - **Build** - a standard factory for constructing components.
 - **Cache** - cache Components in Memcached
 - **Lock** - components of working with locks in Memcached
