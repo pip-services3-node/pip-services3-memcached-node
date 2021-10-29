@@ -13,7 +13,7 @@ import { ICache } from 'pip-services3-components-node';
  * ### Configuration parameters ###
  *
  * - connection(s):
- *   - discovery_key:         (optional) a key to retrieve the connection from [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]]
+ *   - discovery_key:         (optional) a key to retrieve the connection from [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]]
  *   - host:                  host name or IP address
  *   - port:                  port number
  *   - uri:                   resource URI or connection string with all parameters in it
@@ -32,7 +32,7 @@ import { ICache } from 'pip-services3-components-node';
  *
  * ### References ###
  *
- * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
+ * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
  *
  * ### Example ###
  *

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MemcachedCache = void 0;
 const pip_services3_commons_node_1 = require("pip-services3-commons-node");
 const pip_services3_commons_node_2 = require("pip-services3-commons-node");
 const pip_services3_components_node_1 = require("pip-services3-components-node");
@@ -11,7 +12,7 @@ const pip_services3_components_node_1 = require("pip-services3-components-node")
  * ### Configuration parameters ###
  *
  * - connection(s):
- *   - discovery_key:         (optional) a key to retrieve the connection from [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]]
+ *   - discovery_key:         (optional) a key to retrieve the connection from [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]]
  *   - host:                  host name or IP address
  *   - port:                  port number
  *   - uri:                   resource URI or connection string with all parameters in it
@@ -30,7 +31,7 @@ const pip_services3_components_node_1 = require("pip-services3-components-node")
  *
  * ### References ###
  *
- * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
+ * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]] services to resolve connection
  *
  * ### Example ###
  *
@@ -173,7 +174,13 @@ class MemcachedCache {
     retrieve(correlationId, key, callback) {
         if (!this.checkOpened(correlationId, callback))
             return;
-        this._client.get(key, callback);
+        this._client.get(key, (err, item) => {
+            if (err) {
+                callback(err, null);
+                return;
+            }
+            callback(err, item ? JSON.parse(item) : item);
+        });
     }
     /**
      * Stores value in the cache with expiration time.
@@ -188,7 +195,7 @@ class MemcachedCache {
         if (!this.checkOpened(correlationId, callback))
             return;
         let timeoutInSec = timeout / 1000;
-        this._client.set(key, value, timeoutInSec, callback);
+        this._client.set(key, JSON.stringify(value), timeoutInSec, callback);
     }
     /**
      * Removes a value from the cache by its key.
