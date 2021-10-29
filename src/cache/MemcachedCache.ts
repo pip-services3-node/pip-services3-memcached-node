@@ -194,7 +194,13 @@ export class MemcachedCache implements ICache, IConfigurable, IReferenceable, IO
         callback: (err: any, value: any) => void): void {
         if (!this.checkOpened(correlationId, callback)) return;
 
-        this._client.get(key, callback);
+        this._client.get(key, (err, item) => {
+            if (err) {
+                callback(err, null);
+                return;
+            }
+            callback(err, JSON.parse(item));
+        });
     }
 
     /**
@@ -211,7 +217,7 @@ export class MemcachedCache implements ICache, IConfigurable, IReferenceable, IO
         if (!this.checkOpened(correlationId, callback)) return;
 
         let timeoutInSec = timeout / 1000;
-        this._client.set(key, value, timeoutInSec, callback);
+        this._client.set(key, JSON.stringify(value), timeoutInSec, callback);
     }
 
     /**
