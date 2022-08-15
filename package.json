@@ -1,5 +1,5 @@
 {
-    "name": "pip-services-memcached-node",
+    "name": "pip-services3-memcached-node",
     "version": "3.0.3",
     "author": "Conceptual Vision Consulting LLC",
     "description": "Memcached components for Pip.Services in Node.js",
